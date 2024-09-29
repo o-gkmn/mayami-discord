@@ -1,0 +1,13 @@
+[build]
+  command = "npm start"
+  publish = "dist"
+
+[context.production]
+  environment = { NODE_ENV = "production" }
+
+[context.deploy-preview]
+  environment = { NODE_ENV = "development" }
+
+[dev]
+  command = "npm run dev"
+  port = 3000
