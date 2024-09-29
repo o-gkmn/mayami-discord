@@ -1,6 +1,17 @@
 {
+  "name": "mayami",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "build": "mkdir -p dist && cp -r src/. dist/"
+  },
   "dependencies": {
     "discord.js": "^14.16.2",
     "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
