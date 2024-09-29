@@ -9,7 +9,7 @@ client.once(Events.ClientReady, c=>{
 
 const ping = new SlashCommandBuilder()
         .setName('ping')
-        .setDescription('Replies with "Pongg!"')
+        .setDescription('Replies with "Ponggg!"')
 
 const love = new SlashCommandBuilder()
         .setName('love')
