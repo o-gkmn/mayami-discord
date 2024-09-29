@@ -1,5 +1,5 @@
 [build]
-  command = "npm start"
+  command = "npm install; npm start"
   publish = "dist"
 
 [context.production]
