@@ -69,7 +69,7 @@ const hello = new SlashCommandBuilder()
                 .setRequired(false)
         )
 const pingCommand = ping.toJSON();
-client.application.commands.create(pingCommand, "435519356043132956");
+client.application.commands.create(pingCommand, "1024750030390825000");
 
     const pingCommand1 = love.toJSON();
     client.application.commands.create(pingCommand1, "435519356043132956");
