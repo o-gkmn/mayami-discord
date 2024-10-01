@@ -52,9 +52,24 @@ client.once(Events.ClientReady, c => {
     const love = new SlashCommandBuilder()
         .setName('love')
         .setDescription('Say Love')
+        .addUserOption(option =>
+            option
+                .setName('user')
+                .setDescription('The user to say love to')
+                .setRequired(false)
+        )
 
-    const pingCommand = ping.toJSON();
-    client.application.commands.create(pingCommand, "435519356043132956");
+const hello = new SlashCommandBuilder()
+        .setName('hello')
+        .setDescription('Say hello to someone')
+        .addUserOption(option =>
+            option
+                .setName('user')
+                .setDescription('The user to say hi to')
+                .setRequired(false)
+        )
+const pingCommand = ping.toJSON();
+client.application.commands.create(pingCommand, "435519356043132956");
 
     const pingCommand1 = love.toJSON();
     client.application.commands.create(pingCommand1, "435519356043132956");
@@ -66,10 +81,19 @@ client.on(Events.InteractionCreate, interaction => {
     if (interaction.commandName === "ping") {
         interaction.reply("Pong!");
     }
-    if (interaction.commandName === "love") {
-        interaction.reply("Seni Çok Seviyorum!");
+    if(interaction.commandName === "love"){
+        let user = (interaction.options.getUser('user'))
+        if(!user) user = interaction.user;
+        interaction.reply(`Seni Çok Seviyorum ${user.username}`);
+    }
+
+
+    if(interaction.commandName === "hello"){
+        let user = (interaction.options.getUser('user'))
+        if(!user) user = interaction.user;
+        interaction.reply(`Hello ${user.username}`);
     }
     console.log(interaction);
-})
+});
 
 client.login(process.env.TOKEN);
