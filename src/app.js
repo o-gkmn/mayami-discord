@@ -69,9 +69,12 @@ const hello = new SlashCommandBuilder()
                 .setRequired(false)
         )
 const pingCommand = ping.toJSON();
-client.application.commands.create(pingCommand, "1024750030390825000");
+client.application.commands.create(pingCommand, "435519356043132956");
 
     const pingCommand1 = love.toJSON();
+    client.application.commands.create(pingCommand1, "435519356043132956");
+
+    const pingCommand2 = hello.toJSON();
     client.application.commands.create(pingCommand1, "435519356043132956");
 
 });
@@ -92,7 +95,9 @@ client.on(Events.InteractionCreate, interaction => {
         let user = (interaction.options.getUser('user'))
         if(!user) user = interaction.user;
         interaction.reply(`Hello ${user.username}`);
+
     }
+
     console.log(interaction);
 });
 
